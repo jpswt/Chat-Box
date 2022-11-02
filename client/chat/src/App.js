@@ -27,7 +27,7 @@ function App() {
 			{!showMsg ? (
 				<div className="relative flex flex-col justify-center items-center h-full ">
 					<h3 className=" text-3xl font-bold text-white block text-center mb-3">
-						Join Chat
+						Coffee Chat
 					</h3>
 					<input
 						className=" bg-white py-2 px-4 text-gray=500 mb-2 placeholder:text-gray-600 outline-none w-[16rem]"
