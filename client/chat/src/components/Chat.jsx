@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
-function Chat(props) {
-	const { socket, username, room } = props;
+function Chat({ socket, username, room }) {
 	const [msg, setMsg] = useState('');
 	const [msgList, setMsgList] = useState([]);
 
@@ -13,6 +12,7 @@ function Chat(props) {
 				user: username,
 				message: msg,
 			};
+
 			await socket.emit('send_message', msgData);
 			setMsgList((list) => [...list, msgData]);
 			setMsg('');
@@ -30,19 +30,20 @@ function Chat(props) {
 			<div className=" w-[30rem] py-2 bg-neutral-700 text-white rounded-t-md text-center text-xl font-bold  ">
 				Coffee Chat Room
 			</div>
-			<div className="w-[30rem] h-[20rem] bg-white text-stone-900 border-2 border-black border-t-0 ">
+			<div className="w-[30rem] h-[20rem] bg-white text-stone-900 border-2 border-black border-t-0 pb-2">
 				<ScrollToBottom className=" w-full h-full overflow-x-hidden overflow-y-scroll">
-					{msgList.map((msgText) => (
-						<div>
-							<div className="ml-3 font-semibold">
-								<p id="username">{msgText.user}</p>
-							</div>
-							<div
-								id={username === msgText.user ? 'you' : 'them'}
-								className="bg-sky-500 w-fit px-4 py-2 rounded-lg ml-2 mt-2 text-white font-bold you-[justify-end] max-w-[200px]"
-							>
+					{msgList.map((msgText, index) => (
+						<div
+							id={username === msgText.user ? 'you' : 'them'}
+							className="bg-sky-500 w-fit px-4 py-2 rounded-lg ml-2 mt-2 text-white font-bold you-[justify-end] max-w-[200px]"
+							key={index}
+						>
+							<div>
 								<div className=" max-w-3xl break-words overflow-x-hidden">
 									<p>{msgText.message}</p>
+								</div>
+								<div className="ml-3 font-semibold">
+									<p>{msgText.user}</p>
 								</div>
 							</div>
 						</div>
