@@ -16,6 +16,7 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
+	socket.removeAllListeners();
 	console.log(`User Connected: ${socket.id}`);
 
 	socket.on('join_room', (data) => {
@@ -32,7 +33,7 @@ io.on('connection', (socket) => {
 	});
 });
 
-const PORT = 8000;
+const PORT = 8080;
 server.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
