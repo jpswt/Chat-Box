@@ -21,7 +21,7 @@ function App() {
 		<div className="relative w-full h-screen ">
 			<img
 				className="absolute w-full h-full object-cover mix-blend-overlay bg-left-top"
-				src="https://images.unsplash.com/photo-1629131530694-c2b44f0cd901?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+				src="https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80"
 				alt=""
 			/>
 			{!showMsg ? (

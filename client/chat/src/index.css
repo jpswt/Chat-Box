@@ -3,5 +3,15 @@
 @tailwind utilities;
 
 #you {
-	color: red;
+	justify-content: flex-end;
+	margin-right: 0.5rem;
+}
+
+#you .message {
+	background-color: hsl(220, 76%, 54%);
+}
+
+#you .user {
+	text-align: right;
+	margin-right: 0.5rem;
 }
