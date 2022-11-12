@@ -10,7 +10,7 @@ import Chat from './components/Chat';
 // 	},
 // });
 
-const io = require('socket.io-client');
+// const io = require('socket.io-client');
 const socket = io('https://chat2-backend.vercel.app', {
 	withCredentials: true,
 	transportOptions: {

@@ -17,7 +17,7 @@ app.use(cors());
 // 	},
 // });
 
-const io = require('socket.io')(httpServer, {
+const io = new Server(httpServer, {
 	origins: ['https://chat2-roan.vercel.app'],
 
 	handlePreflightRequest: (req, res) => {
