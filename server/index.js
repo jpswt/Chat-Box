@@ -8,12 +8,26 @@ const app = express();
 app.use(cors());
 
 // const server = http.createServer(app);
-const io = new Server(httpServer, {
-	cors: {
-		origin: 'https://chat2-roan.vercel.app',
-		methods: ['GET', 'POST'],
-		allowedHeaders: ['my-chat-header'],
-		credentials: true,
+// const io = new Server(httpServer, {
+// 	cors: {
+// 		origin: 'https://chat2-roan.vercel.app',
+// 		methods: ['GET', 'POST'],
+// 		allowedHeaders: ['my-chat-header'],
+// 		credentials: true,
+// 	},
+// });
+
+const io = require('socket.io')(httpServer, {
+	origins: ['https://chat2-roan.vercel.app'],
+
+	handlePreflightRequest: (req, res) => {
+		res.writeHead(200, {
+			'Access-Control-Allow-Origin': 'https://chat2-roan.vercel.app',
+			'Access-Control-Allow-Methods': 'GET,POST',
+			'Access-Control-Allow-Headers': 'my-custom-header',
+			'Access-Control-Allow-Credentials': true,
+		});
+		res.end();
 	},
 });
 
