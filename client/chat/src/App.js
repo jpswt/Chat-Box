@@ -42,7 +42,7 @@ function App() {
 						onChange={(e) => setRoom(e.target.value)}
 					/>
 					<button
-						className="py-2 px-4 bg-blue-500 text-white font-bold rounded"
+						className="py-2 px-4 bg-blue-500 text-white font-bold rounded hover:bg-blue-400 border-white border-2 border-opacity-50 "
 						onClick={joinRoom}
 					>
 						Join Chat
