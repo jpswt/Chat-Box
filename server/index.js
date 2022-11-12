@@ -12,7 +12,8 @@ const io = new Server(server, {
 	cors: {
 		origin: 'https://chat2-roan.vercel.app/',
 		methods: ['GET', 'POST'],
-		header: 'Access-Control-Allow-Origin: *',
+		allowedHeaders: ['my-chat-header'],
+		credentials: true,
 	},
 });
 
