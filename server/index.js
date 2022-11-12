@@ -36,6 +36,6 @@ io.on('connection', (socket) => {
 });
 
 const PORT = 8080;
-server.listen(PORT, () => {
+httpServer.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
