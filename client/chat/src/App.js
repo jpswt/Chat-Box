@@ -6,7 +6,7 @@ import Chat from './components/Chat';
 const socket = io('https://chat2-backend.vercel.app', {
 	withCredentials: true,
 	extraHeaders: {
-		'my-chat-header': 'babel',
+		'my-chat-header': 'abcd',
 	},
 });
 
