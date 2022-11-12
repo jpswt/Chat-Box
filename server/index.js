@@ -10,7 +10,7 @@ app.use(cors());
 // const server = http.createServer(app);
 const io = new Server(httpServer, {
 	cors: {
-		origin: 'https://localhost:3000',
+		origin: 'https://chat2-roan.vercel.app',
 		methods: ['GET', 'POST'],
 		allowedHeaders: ['my-chat-header'],
 		credentials: true,
