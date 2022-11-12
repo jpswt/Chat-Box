@@ -10,7 +10,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: 'http://https://chat2-roan.vercel.app/',
+		origin: 'https://chat2-roan.vercel.app/',
 		methods: ['GET', 'POST'],
 	},
 });
