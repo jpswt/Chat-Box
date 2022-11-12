@@ -7,8 +7,8 @@ const app = express();
 
 app.use(cors());
 
-const server = http.createServer(app);
-const io = new Server(server, {
+// const server = http.createServer(app);
+const io = new Server(httpServer, {
 	cors: {
 		origin: 'https://localhost:3000',
 		methods: ['GET', 'POST'],
