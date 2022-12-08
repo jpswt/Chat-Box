@@ -3,24 +3,7 @@ import io from 'socket.io-client';
 import { useState } from 'react';
 import Chat from './components/Chat';
 
-// const socket = io('https://chat2-backend.vercel.app', {
-// 	withCredentials: true,
-// 	extraHeaders: {
-// 		'my-chat-header': 'abcd',
-// 	},
-// });
-
-// const io = require('socket.io-client');
-const socket = io('https://chat2-backend.vercel.app', {
-	withCredentials: true,
-	transportOptions: {
-		polling: {
-			extraHeaders: {
-				'my-custom-header': 'abcd',
-			},
-		},
-	},
-});
+const socket = io.connect('http://localhost:8080');
 
 function App() {
 	const [username, setUsername] = useState('');

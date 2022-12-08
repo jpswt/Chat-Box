@@ -7,29 +7,28 @@ const app = express();
 
 app.use(cors());
 
-// const server = http.createServer(app);
-// const io = new Server(httpServer, {
-// 	cors: {
-// 		origin: 'https://chat2-roan.vercel.app',
-// 		methods: ['GET', 'POST'],
-// 		allowedHeaders: ['my-chat-header'],
-// 		credentials: true,
-// 	},
-// });
-
-const io = new Server(httpServer, {
-	origins: ['https://chat2-roan.vercel.app'],
-
-	handlePreflightRequest: (req, res) => {
-		res.writeHead(200, {
-			'Access-Control-Allow-Origin': 'https://chat2-roan.vercel.app',
-			'Access-Control-Allow-Methods': 'GET,POST',
-			'Access-Control-Allow-Headers': 'my-custom-header',
-			'Access-Control-Allow-Credentials': true,
-		});
-		res.end();
+const server = http.createServer(app);
+const io = new Server(server, {
+	cors: {
+		origin: 'http://localhost:3000',
+		methods: ['GET', 'POST'],
 	},
 });
+
+// const io = new Server(httpServer, {
+// 	origins: ['http://localhost:3000/'],
+// 	methods: ['GET', 'POST'],
+
+// handlePreflightRequest: (req, res) => {
+// 	res.writeHead(200, {
+// 		'Access-Control-Allow-Origin': 'https://chat2-roan.vercel.app',
+// 		'Access-Control-Allow-Methods': 'GET,POST',
+// 		'Access-Control-Allow-Headers': 'my-custom-header',
+// 		'Access-Control-Allow-Credentials': true,
+// 	});
+// 	res.end();
+// },
+// });
 
 io.on('connection', (socket) => {
 	socket.removeAllListeners();
