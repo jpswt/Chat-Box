@@ -2,7 +2,7 @@
 
 ChatBox is a React application utilizing Socket.io connections which allows a user to chat with others via room IDs. 
 
-## Chat-Box Login Page
+## ChatBox Login Page
 
 User inputs their name and name/ID of the room they wish to join.  
 
