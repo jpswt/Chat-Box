@@ -27,7 +27,7 @@ function Chat({ socket, username, room }) {
 	return (
 		<div className="relative flex flex-col h-full justify-center items-center">
 			<div className=" w-[30rem] py-2 bg-[#0a214a]  text-white rounded-t-md text-center border-2 border-white border-b-0 text-xl font-bold  ">
-				Welcome to your Chat Box
+				Welcome to Room ID: {room}
 			</div>
 			<div className="w-[30rem] h-[20rem] bg-white text-stone-900 border-2 pb-2">
 				<ScrollToBottom className=" w-full h-full overflow-x-hidden overflow-y-scroll">
