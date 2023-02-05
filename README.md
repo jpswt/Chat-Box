@@ -1,6 +1,6 @@
 # Chat-Box
 
-Chat is a React application that allows a user to chat with others via room IDs. 
+Chat is a React application utilizing Socket.io which allows a user to chat with others via room IDs. 
 
 ## Chat-Box Login Page
 
