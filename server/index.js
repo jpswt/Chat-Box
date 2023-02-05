@@ -15,21 +15,6 @@ const io = new Server(server, {
 	},
 });
 
-// const io = new Server(httpServer, {
-// 	origins: ['http://localhost:3000/'],
-// 	methods: ['GET', 'POST'],
-
-// handlePreflightRequest: (req, res) => {
-// 	res.writeHead(200, {
-// 		'Access-Control-Allow-Origin': 'https://chat2-roan.vercel.app',
-// 		'Access-Control-Allow-Methods': 'GET,POST',
-// 		'Access-Control-Allow-Headers': 'my-custom-header',
-// 		'Access-Control-Allow-Credentials': true,
-// 	});
-// 	res.end();
-// },
-// });
-
 io.on('connection', (socket) => {
 	socket.removeAllListeners();
 	console.log(`User Connected: ${socket.id}`);
@@ -48,7 +33,7 @@ io.on('connection', (socket) => {
 	});
 });
 
-const PORT = 8080;
-httpServer.listen(PORT, () => {
+const PORT = 8081;
+server.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
